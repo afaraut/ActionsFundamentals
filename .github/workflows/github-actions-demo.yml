@@ -1,0 +1,20 @@
+name: GitHub Actions Demo
+on:
+  push:
+    branches: [ main ]
+    paths-ignore: [.github/**]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '15 6 * * 0'
+  jobs:
+    Build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Output the name of the event that triggered the workflow
+          run: echo ${{ github.event }}
+        - name: Output the name of the branch that the repository is currently referencing
+          run: echo ${{github.branch}}
+        - name : List all files in the repository
+          run: |
+            ls ${{ github.workspace }}

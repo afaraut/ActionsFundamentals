@@ -13,7 +13,7 @@ on:
         runs-on: ubuntu-latest
         steps:
           - name: Output the name of the event that triggered the workflow
-            run: echo "🎉 The job was triggered by event: ${{ github.event_name }}"
+            run: echo "🎉 The job was triggered by event ${{ github.event_name }} "
           - name: Output the name of the branch that the repository is currently referencing
             run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ."
 
